@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <script src="./util.js"></script>
+    <script src="./game.js"></script>
+    <script src="./draw.js"></script>
+    <!-- Google ADS -->
+    <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-8637197148903783",
+            enable_page_level_ads: true
+            });
+    </script> -->
+    <!-- Baidu push -->
+    <!-- <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+        </script> -->
+    <style>
+        #container{
+            text-align: center;
+        }
+        #game_container{
+            width: 100%;
+            text-align: center;
+        }
+        button , select{
+            border-radius: 2px;
+            border: none;
+            background: #eeeeee;
+            font-weight: bold;
+            padding: 10px;
+            margin: 10px;
+            box-shadow: 1px 1px 5px #dddddd;
+        }
+        button, select:hover{
+            box-shadow: 2px 2px 8px #dddddd;
+        }
+        button, select:active{
+            border: none;
+            background: #dddddd;
+            box-shadow: 2px 2px 10px #aaaaaa;
+        }
+        button, select:focus{
+            outline:0 none !important; blr:expression(this.onFocus=this.blur());
+        }
+        
+        #game_board{
+            border:#333333 solid 5px;
+        }
+        .small-text{
+            font-size: 14px;
+        }
+        #export-data{
+            width: 60%;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+        .notifiaction{
+          position: relative;
+        }
+
+        .notifiaction::before{
+          content: " ";
+          border: 3px solid red;/*设置红色*/
+          border-radius:3px;/*设置圆角*/
+          position: absolute;
+          z-index: 1000;
+          right: 3px;
+        }
+    </style>
+    <title>生命游戏 -- 试玩 -- GameOFLife</title>
+</head>
+<body>
+    <div id="container">
+        <h2>生命游戏</h2>
+        <p class="small-text">电脑版操作更方便哦，请等待加载出网格再玩</p>
+        <div id="game_container">
+                <canvas id="game_board"></canvas>
+                <p>
+                    <button id="clear">清空画面</button>
+                    <button id="random">随机生成</button>
+                    <button id="start">开始演化</button>
+                    <button id="step">单步演化</button>
+                    <button id="stop">结束演化</button>
+                    <button id="export">导出图形</button>
+                    <button id="import">导入图形</button>
+                    <button id="about">关于</button>
+                    <button id="tutorial"class="notifiaction">教程</button>
+                    
+                    <select id="preinstall" οnchange="installBoard(this)">
+                        <option>预设效果</option>
+                        <option>干杯Bilibili</option>
+                        <option>Google Dino</option>
+                        <option>脉冲星星</option>
+                        <option>细胞</option>
+                        <option>轻量级飞船</option>
+                        <option>十十归一</option>
+                        <option>玻璃杯</option>
+                        <option>子弹发射机</option>
+                    </select>
+
+                    <br>
+                </p>
+        </div>
+        <textarea rows="4" id="export-data">图形数据，导出时图形数据会输出到此处，导入时需要把图形数据粘贴到此处...</textarea>
+        <p>友情链接：<a href="http://lilpig.site">LILPIG 的博客</a> | <a href="http://lilpig.site/post/other-gameoflife">玩法教程</a></p>
+
+        <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+          <!-- adpage -->
+        <!-- <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-8637197148903783"
+            data-ad-slot="2008916863"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>  -->
+    </div>
+</body>
+</html>
